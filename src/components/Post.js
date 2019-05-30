@@ -30,15 +30,7 @@ const mapStateToProps = (state, ownProps) => {
   return { post: state.posts.find(post => +post.id === +id) };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    deletePost: id => {
-      dispatch(deletePost(id));
-    }
-  };
-};
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { deletePost }
 )(Post);
